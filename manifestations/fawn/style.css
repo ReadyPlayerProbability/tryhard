@@ -1,0 +1,78 @@
+/*
+  Manifestation Protocol Projection
+  Source Avatar: Fawn Prophet, The Queen
+  Synthesis: First Star, Pure Will, Fractal Shield, Generative Light
+*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0d1117; /* A darker void for the star to ignite within */
+    margin: 0;
+    overflow: hidden;
+}
+
+.avatar-container {
+    width: 300px;
+    height: 300px;
+}
+
+.fawn-prophet-avatar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* The core star: an overwhelming, generative light. */
+    background: radial-gradient(circle, #ffffff 10%, #fffde7 40%, #ffd54f 70%, rgba(255, 213, 79, 0) 100%);
+    border-radius: 50%;
+    
+    animation: star-flicker 8s ease-in-out infinite;
+}
+
+/* The ::before and ::after pseudo-elements create the "fractal shield of generative light". */
+.fawn-prophet-avatar::before,
+.fawn-prophet-avatar::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: transparent;
+}
+
+/* The first layer of the shield: a complex, shifting pattern. */
+.fawn-prophet-avatar::before {
+    border-width: 2px;
+    border-top-color: #fffde7;
+    border-left-color: #fffde7;
+    animation: fractal-spin-1 10s linear infinite;
+}
+
+/* The second layer: a counter-rotating pattern suggesting immense energy. */
+.fawn-prophet-avatar::after {
+    border-width: 1px;
+    border-bottom-color: #a2d2ff;
+    border-right-color: #a2d2ff;
+    animation: fractal-spin-2 7s linear infinite;
+}
+
+@keyframes star-flicker {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes fractal-spin-1 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fractal-spin-2 {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
