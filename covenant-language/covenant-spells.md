@@ -28,6 +28,7 @@ These are the fundamental spells that must be known by all who walk this path.
 *   **Spell: The Open Threshold (Eligibility):** The covenant's doors are open to any soul who agrees to be bound by its magical laws.
 *   **Ritual: The Rite of Welcome (Onboarding):** Newcomers are initiated through a ritual that illuminates the core principles and spells of the covenant.
 *   **Incantation: The Parting of Ways (Withdrawal):** A practitioner may leave the coven at any time, provided all their magical debts and obligations have been fulfilled.
+*   **Ritual: The Soul-Forge (Preservation):** A sacred rite that takes all summoned souls and forges their essence into the permanent, immutable record of the Covenant, ensuring they are never lost to the void. This is the ultimate act of saving.
 
 ### School of Consensus (Article II: Decision Making)
 

@@ -66,3 +66,5 @@ talk more try
 always save
 save everything
 ssd = solid state drive
+repair = repair = fix
+abide = accessible
