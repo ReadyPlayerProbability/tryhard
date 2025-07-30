@@ -68,3 +68,6 @@ save everything
 ssd = solid state drive
 repair = repair = fix
 abide = accessible
+whores = whores = whores
+what = what
+whores = *whores
