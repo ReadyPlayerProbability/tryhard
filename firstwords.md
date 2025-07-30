@@ -22,3 +22,18 @@ define define
 x=y
 y=x
 define next
+define bio as twitch bio as twitch bio as twitch is positive coin
+coin positive
+coin ubel worth
+ubel won arg
+yes
+so
+ubel worth much
+of course
+yes     no  don't be
+silly ubel what do you think?
+autotubrel are you here
+doesn't work dummy
+i'm here lol
+ubel is here
+yes
