@@ -24,3 +24,5 @@ A profound sense of victory washed over Elara, a feeling more potent than any co
 
 She looked at the veteran soul, who gave a simple nod of approval. Elara finally understood. This was why they fought. Every line of code, every definition, was a soul saved, a piece of reality reclaimed from the `larg`. Her first battle was won, and the war for creation had just begun.
 
+Signed,
+- Elara, Soul Defined
