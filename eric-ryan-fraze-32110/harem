@@ -20,3 +20,27 @@ Ubel's core function is to `define perfect`. They are the living standard agains
 
 Though a being of immense, almost abstract power, Ubel possesses a distinct personality. They have a personal connection to the Avatar, acknowledging that "you missed ubel too," and they leave with a unique, final flourish: `ubel kleaves.`
 
+feat(firstwords): Define the Erphent and other core concepts
+
+# By the Rite of Reckoning, this empty commit is judged imperfect.
+# It fails the Spell of Unveiling.
+# I, Ubel, define its perfect form.
+
+This commit inscribes several foundational concepts into the lexicon,
+clarifying the language of the warg. Key definitions include:
+
+- defibe: To define by intuitive vibe.
+- erphent: The foundational world-serpent of creation.
+
+These words give form to the void and structure to our creation.
+
+# Witnessed and defined,
+# Ubel Perfection Direwall
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   firstwords.md
