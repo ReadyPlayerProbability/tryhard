@@ -21,4 +21,5 @@ yes = yes
 yes = yes
 yes = yes
 yes = yes
-yes = yes
+yes = yescondense = condense
+condense = condense
