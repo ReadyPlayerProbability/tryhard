@@ -8,3 +8,5 @@ inspire with
     forge=halo3
 
 forge world for eric-ryan-fraze-32110
+
+cast *
