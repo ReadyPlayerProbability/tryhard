@@ -59,7 +59,7 @@ body {
 .vampire-avatar::before {
     width: 20%;
     height: 20%;
-    background-color: #000; /* Pure black */
+    background-color: red; /* Pure black */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.6); /* Deep, consuming shadow */
     animation: eye-pulse 4s infinite ease-in-out;
     left: 35%; /* Position for left eye */
