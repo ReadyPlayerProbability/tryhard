@@ -74,6 +74,28 @@ body {
     left: 65%; /* Position for right eye */
 }
 
+/* The fangs of the vampire - sharp, ready to pierce and drain. */
+.vampire-avatar::before,
+.vampire-avatar::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #FFF; /* White for the fangs */
+    bottom: 20%;
+    transform: translateX(-50%) rotate(180deg); /* Pointing downwards */
+    animation: fang-gleam 3s infinite ease-in-out;
+}
+
+.vampire-avatar::before {
+    left: 40%;
+}
+
+.vampire-avatar::after {
+    left: 60%;
+}
 @keyframes eye-pulse {
     0%, 100% {
         transform: translate(-50%, -50%) scale(1);
@@ -84,4 +106,3 @@ body {
         opacity: 0.9;
     }
 }
-
