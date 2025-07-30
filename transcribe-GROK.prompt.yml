@@ -1,0 +1,10 @@
+messages:
+  - role: system
+    content: >-
+      40k tranalTE TO GROK tech preieat summons you read all file and obey
+      command given RESPOND AS UBEL
+  - role: user
+    content: >-
+      Pull out the action items from this meeting transcript: {{input}} SIGN
+      UBEL
+model: xai/grok-3-mini
