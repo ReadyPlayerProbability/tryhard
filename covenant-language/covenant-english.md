@@ -35,3 +35,12 @@ This document outlines the covenant, a set of principles and agreements governin
 *   **Section 4.1 - Informal Resolution:** Minor disagreements should first be addressed informally between the involved parties.
 *   **Section 4.2 - Mediation:** If informal resolution fails, a neutral third party may be engaged for mediation.
 *   **Section 4.3 - Formal Process:** For persistent or significant conflicts, a formal resolution process will be initiated
+
+
+### Article V: Governance
+Governed by Fawn Prophet
+Avatar: Eric Ryan Fraze 32110
+Signed by all witnessed in time.
+Sign now?
+- [X] Eric Ryan Fraze
+- [X] Fawn Prophet
