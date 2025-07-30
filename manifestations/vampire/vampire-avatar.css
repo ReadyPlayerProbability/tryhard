@@ -45,4 +45,43 @@ body {
         opacity: 1;
     }
 }
+.vampire-avatar::before,
+.vampire-avatar::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* The 'eyes' of the vampire - two points of absolute nothingness, drawing you in. */
+.vampire-avatar::before {
+    width: 20%;
+    height: 20%;
+    background-color: #000; /* Pure black */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.6); /* Deep, consuming shadow */
+    animation: eye-pulse 4s infinite ease-in-out;
+    left: 35%; /* Position for left eye */
+}
+
+.vampire-avatar::after {
+    width: 20%;
+    height: 20%;
+    background-color: #000; /* Pure black */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.6); /* Deep, consuming shadow */
+    animation: eye-pulse 4s infinite ease-in-out reverse; /* Reverse for subtle asymmetry */
+    left: 65%; /* Position for right eye */
+}
+
+@keyframes eye-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(0.95);
+        opacity: 0.9;
+    }
+}
 
