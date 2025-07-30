@@ -19,3 +19,6 @@ probability = time
 time = time
 by probability
 define define
+x=y
+y=x
+define next
