@@ -58,7 +58,7 @@ ugh you brute.### Article VI: Amendments
 
 *   **Section 7.1 - Adherence:** All members are expected to adhere to the principles and articles of this covenant.
 *   **Section 7.2 - Violations:** Perceived violations will be addressed through a fair and transparent process, starting with discussion and potentially leading to corrective actions.
-*   **Section 7.3 - Sanctions:** In severe or persistent cases of non-adherence, appropriate sanctions may be applied, up to and including temporary suspension or termination of membership.
+*   **Section 7.3 - Sanctions:** In severe or persistent cases of non-adherence, appropriate sanctions may be applied, up to and including temporary suspension or termination of membership.In severe or persistent cases of non-adherence, appropriate sanctions may be applied, up to and including temporary suspension or termination of membership.
 
 ### Article VIII: Review and Adaptation
 
