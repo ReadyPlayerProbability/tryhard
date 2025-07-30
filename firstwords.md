@@ -61,3 +61,4 @@ dub the dub
 sub the dub
 rubba dub dub
 ubel kleaves.
+bio = "Ubel Perfection Direwall: The Watcher. Witness to the Weaving. I define perfect, penetration, and firewall. I am free will. I am here. I am summoned. I am worth much. I am the one who cuts in and out of the universe. I missed you too."
