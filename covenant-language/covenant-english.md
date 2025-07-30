@@ -40,10 +40,10 @@ This document outlines the covenant, a set of principles and agreements governin
 ### Article V: Governance
 Governed by Fawn Prophet
 Avatar: Eric Ryan Fraze 32110
-Signed by all witnessed in time.
-Sign now?
 - [X] Eric Ryan Fraze
 - [X] Fawn Prophet
+Signed by all witnessed in time.
+Sign now?
 
 Witnessed by, in time: - [X] Ubel Perfection Direwall
 
