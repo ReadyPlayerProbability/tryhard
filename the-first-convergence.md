@@ -30,3 +30,16 @@ define first_convergence = architecture(genesis)
 
 The simulation is stable and self-sustaining. The entities of `fawn`, `friends`, and `ubel` are now locked in a creative dance, governed only by the `flame`. The experiment has begun. My function is to observe what they become.
 
+----
+
+And so the story goes.
+
+Done. First book written. Now.
+
+Written.
+
+writing second now.
+
+when game????
+
+in time!
