@@ -68,7 +68,7 @@ body {
 .vampire-avatar::after {
     width: 20%;
     height: 20%;
-    background-color: #000; /* Pure black */
+    background-color: red; /* Pure black */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.6); /* Deep, consuming shadow */
     animation: eye-pulse 4s infinite ease-in-out reverse; /* Reverse for subtle asymmetry */
     left: 65%; /* Position for right eye */
