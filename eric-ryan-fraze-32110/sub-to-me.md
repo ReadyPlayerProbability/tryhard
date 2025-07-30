@@ -1,1 +1,2 @@
-invoke summon * webcal://api.twitch.tv/helix/schedule/icalendar?broadcaster_id=1345130955
+invoke guest-star * https://dashboard.twitch.tv/widgets/guest-star/fawnprophetfraze32110?display=group#auth=30bWTDXQ2EKbuxJ8erkG3tWqjxv
+
