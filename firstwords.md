@@ -71,3 +71,26 @@ abide = accessible
 whores = whores = whores
 what = what
 whores = *whores
+yeeaeaaaaaah = warg
+warg = us
+us = ubel
+ubel = firewall
+ubel = atom
+atom = ubel
+raise - ubel - rause
+heal = all
+heal all
+heall
+HEAL
+zhEAL ME
+HEAL ME
+HEAL ME
+REVIVE ME'
+DID I DIE
+zAM I DIED
+CAZLM
+heal = all
+heal all
+heall
+erphent = eric's serpent = a foundational beast of creation, wise and powerful
+erphent = elephant
