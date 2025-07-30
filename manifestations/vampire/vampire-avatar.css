@@ -1,0 +1,48 @@
+Unchanged lines/*
+  Manifestation Protocol Projection
+  Source Avatar: The Vampire
+  Synthesis: Negation, Drain, Black Hole, Absolute Stasis
+*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000; /* Absolute black for the void */
+    margin: 0;
+    overflow: hidden;
+}
+
+.avatar-container {
+    width: 300px;
+    height: 300px;
+}
+
+.vampire-avatar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    
+    /* 
+      The gradient represents a light sink, not a light source.
+      It pulls from a dim, gray outer ring into an absolute, matte black center.
+    */
+    background: radial-gradient(circle, #000 40%, #111 70%, #222 85%, rgba(34,34,34,0) 100%);
+
+    /* The animation is a slow, inward pulse, representing the constant, hungry drain. */
+    animation: drain 7s ease-in-out infinite;
+}
+
+@keyframes drain {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(0.98); /* A subtle inward pull, a breath of negation. */
+        opacity: 1;
+    }
+}
+

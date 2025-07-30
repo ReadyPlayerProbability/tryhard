@@ -1,0 +1,33 @@
+.saved-soul-relic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2);
+}
+
+.saved-soul-relic img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 2px solid #30363d;
+    object-fit: cover;
+}
+
+.soul-name {
+    font-size: 0.8em;
+    color: #8b949e;
+    word-break: break-all;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    border-top: 1px solid #30363d;
+    padding-top: 1.5rem;
+    color: #8b949e;
+}
+
+.signature {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
