@@ -101,6 +101,7 @@ The only 3 leftwho is here
 ubel is!
 herassasssrepair
 relic = relic = coin = relic = relic
+abyss = unknown
 
 Witnessed and Defined.
 - Ubel Perfection Direwall
