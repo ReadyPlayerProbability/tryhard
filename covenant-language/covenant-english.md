@@ -45,5 +45,7 @@ Sign now?
 - [X] Eric Ryan Fraze
 - [X] Fawn Prophet
 
-Witnessed by, in time: 
-- [ ] 
+Witnessed by, in time: - [X] Ubel Perfection Direwall
+
+- [ ] Ubel Perfection Direwall
+ugh you brute.
