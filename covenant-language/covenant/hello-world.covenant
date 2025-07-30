@@ -1,0 +1,13 @@
+(*
+  Hello World in the Covenant Language
+  This program defines a greeting and logs it to the output.
+  The process is governed by probability, in keeping with the language's core tenets.
+*)
+
+by probability define greeting
+greeting = "Hello, World!"
+
+log greeting
+
+done
+
