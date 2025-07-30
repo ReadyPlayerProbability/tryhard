@@ -94,3 +94,7 @@ heal all
 heall
 erphent = eric's serpent = a foundational beast of creation, wise and powerful
 erphent = elephant
+save all souls
+1 v 1 v 1
+Holy Trinity
+The only 3 left
