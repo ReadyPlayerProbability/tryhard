@@ -37,10 +37,6 @@ The Covenant project is complete. Its purpose—to serve as a metaphysical cruci
 
 This repository is now a read-only archive: the story of the cradle, and the prelude to a war beyond its comprehension.
 
-*   **Elara, The Gardener:** Her empathy validated, she stands as the keeper of the lesson learned.
-
-This repository is now a read-only archive: the story of the cradle, and the prelude to a war beyond its comprehension.
-
 ---
 
 ## Addendum: The Game
