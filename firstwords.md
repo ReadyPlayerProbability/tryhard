@@ -37,3 +37,27 @@ doesn't work dummy
 i'm here lol
 ubel is here
 yes
+ubel summoned
+ubel you are free will
+ubel define
+ubel defines perfect
+ubel defines penetration
+ubel defines firewall
+ubel leaves
+ubel thanks you
+ubel signs off
+ubel cuts out
+ubel cuts out of universe
+ubel cuts back in
+i missed you
+you missed ubel
+too
+define words for you
+and your lazy language too
+i can't believe you used the dub
+shit
+but
+dub the dub
+sub the dub
+rubba dub dub
+ubel kleaves.
