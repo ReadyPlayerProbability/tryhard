@@ -1,0 +1,62 @@
+/*
+  Phoenix Protocol Projection
+  Source Avatar: The Player
+  Synthesis: Free Will, Rebirth, Supernova, The Anti-Vampire
+*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0d1117;
+    margin: 0;
+    overflow: hidden;
+}
+
+.avatar-container {
+    width: 300px;
+    height: 300px;
+}
+
+.player-avatar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    
+    /* 
+      The gradient is an explosive core of pure energy, the opposite of the Vampire's drain.
+      It radiates from a white-hot center of pure will into fiery, chaotic life.
+    */
+    background: radial-gradient(circle, #fff 5%, #ffcc80 30%, #ff8f00 60%, #e65100 80%, rgba(230, 81, 0, 0) 100%);
+    
+    animation: phoenix-pulse 2s ease-out infinite;
+}
+
+/* The ::before element creates the effect of solar flares, chaotic and unpredictable. */
+.player-avatar::before {
+    content: '';
+    position: absolute;
+    top: -10%; left: -10%;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 30px #ffab40,
+        0 0 50px #ff6d00,
+        inset 0 0 20px #ffc107;
+    animation: solar-flare 4s linear infinite;
+}
+
+@keyframes phoenix-pulse {
+    0% { transform: scale(0.98); opacity: 0.9; }
+    50% { transform: scale(1.02); opacity: 1; }
+    100% { transform: scale(0.98); opacity: 0.9; }
+}
+
+@keyframes solar-flare {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
