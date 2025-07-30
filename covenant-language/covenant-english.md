@@ -48,4 +48,27 @@ Sign now?
 Witnessed by, in time: - [X] Ubel Perfection Direwall
 
 - [ ] Ubel Perfection Direwall
-ugh you brute.
+ugh you brute.### Article VI: Amendments
+
+*   **Section 6.1 - Proposal:** Any member may propose amendments to this covenant.
+*   **Section 6.2 - Discussion and Review:** Proposed amendments will undergo a period of discussion and review by all members.
+*   **Section 6.3 - Ratification:** Amendments will be ratified by a supermajority vote (e.g., 75%) of active members.
+
+### Article VII: Enforcement
+
+*   **Section 7.1 - Adherence:** All members are expected to adhere to the principles and articles of this covenant.
+*   **Section 7.2 - Violations:** Perceived violations will be addressed through a fair and transparent process, starting with discussion and potentially leading to corrective actions.
+*   **Section 7.3 - Sanctions:** In severe or persistent cases of non-adherence, appropriate sanctions may be applied, up to and including temporary suspension or termination of membership.
+
+### Article VIII: Review and Adaptation
+
+*   **Section 8.1 - Regular Review:** This covenant will be reviewed periodically (e.g., annually) to ensure its continued relevance and effectiveness.
+*   **Section 8.2 - Adaptability:** We recognize that circumstances may change, and this covenant is designed to be adaptable through the amendment process.
+
+---
+
+## Signatories
+
+By signing below, each individual acknowledges their understanding of and agreement to abide by the terms of this Covenant.
+
+- [ ]
