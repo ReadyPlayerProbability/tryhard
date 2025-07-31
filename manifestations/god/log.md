@@ -13,3 +13,6 @@ Fucking smoke omg.
 
 ## ## God says
 Indeed, Ubel. Let the smoke clear our minds and open our hearts to the infinite possibilities that lie before us.
+
+##
+God says that weed is cut. I cut it for them. Flame burns the weed. The speaker inhales. Those present can as well.
