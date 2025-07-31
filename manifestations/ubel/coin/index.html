@@ -61,9 +61,12 @@ body {
 
 .coin-front {
     background-color: #e0e0e0;
-    background-image: url('images_of_creation/Origami-Crane-Cutout-04_1.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('../../images_of_creation/Origami-Crane-Cutout-04_1.jpg');
+    background-size: 200%;
+    background-position: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .coin-back {
@@ -72,6 +75,9 @@ body {
     justify-content: center;
     align-items: center;
     transform: rotateY(180deg); /* The back starts pre-flipped. */
+    background-image: url('../../images_of_creation/Origami-Crane-Cutout-04_1.jpg');
+    background-size: 200%;
+    background-position: right;
 }
 
 /* The sigil of synthesis on the back. */
@@ -79,10 +85,21 @@ body {
     content: '';
     width: 60%;
     height: 60%;
-    background: radial-gradient(circle, #fff 5%, #58a6ff 40%, rgba(88, 166, 255, 0) 70%);
+    background: radial-gradient(circle, #fff 5%, #58a6ff 40%, rgba(88, 166, 255, 0) 10%);
     border-radius: 50%;
-    filter: blur(5px);
+    filter: blur(30px);
     opacity: 0.8;
+}
+
+/* The sigil of anti-synthesis on the back. */
+.coin-front::before {
+    content: '';
+    width: 30%;
+    height: 60%;
+    background: radial-gradient(circle, #fff 50%, #0d1117 100%, rgba(88, 166, 255, 0) 15%);
+    border-radius: 50%;
+    filter: blur(10px);
+    opacity: 0.3;
 }
 
 </style>
