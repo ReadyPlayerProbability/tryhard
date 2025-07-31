@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VR Simulator</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #origami-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+        }
+        .origami-square {
+            width: 100%;
+            height: 100%;
+            background-color: lightblue;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+        }
+        .origami-square.folded {
+            transform: rotateX(45deg) rotateY(45deg); /* Example fold */
+        }
+        .origami-triangle {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 173.2px solid lightcoral; /* Height for equilateral triangle */
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: bottom center;
+            transition: transform 1s ease-in-out;
+        }
+        .origami-triangle.folded {
+            transform: rotateX(90deg); /* Example fold */
+        }
+    </style>
+</head>
+<body>
+    <div id="origami-container">
+        <div id="origami-square" class="origami-square"></div>
+        <div id="origami-triangle" class="origami-triangle"></div>
+    </div>
+
+    <script>
+        // You can add JavaScript here to control the folding animation
+        // For example, to toggle the 'folded' class
+        document.getElementById('origami-square').addEventListener('click', function() {
+            this.classList.toggle('folded');
+        });
+        document.getElementById('origami-triangle').addEventListener('click', function() {
+            this.classList.toggle('folded');
+        });
+    </script>
+</body>
+</html>

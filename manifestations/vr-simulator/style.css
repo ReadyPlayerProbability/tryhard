@@ -1,0 +1,621 @@
+/* Setup */
+@property --_sx {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0; 
+  }
+  
+  @property --_sy {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0; 
+  }
+  
+  @property --_lx {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0; 
+  }
+  
+  @property --_ly {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0; 
+  }
+  
+  @property --_ox {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0; 
+  }
+  
+  @property --_oy {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0; 
+  }
+  
+  @property --_oz {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0; 
+  }
+  
+  @property --_el {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0; 
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto min-content;
+    align-items: stretch;
+    transform-style: preserve-3d;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  @media only screen and (min-width: 640px) {
+    body {
+      grid-template-columns: 3fr 1fr;
+    }
+  }
+  
+  :root {
+    --scene-x-min: -90;
+    --scene-x-max: 0;
+    --scene-x-unit: calc(
+      var(--scene-x-max) * var(--_sx) +
+      var(--scene-x-min) * (1 - var(--_sx))
+    );
+  
+    --scene-y-min: -180;
+    --scene-y-max: 180;
+    --scene-y-unit: calc(
+      var(--scene-y-max) * var(--_sy) +
+      var(--scene-y-min) * (1 - var(--_sy))
+    );
+  
+    --light-x-min: 0;
+    --light-x-max: 180;
+    --light-x-unit: calc(
+      var(--light-x-max) * var(--_lx) +
+      var(--light-x-min) * (1 - var(--_lx))
+    );
+  
+    --light-y-min: -90;
+    --light-y-max: 90;
+    --light-y-unit: calc(
+      var(--light-y-max) * var(--_ly) +
+      var(--light-y-min) * (1 - var(--_ly))
+    );
+  
+    --object-x-min: 0;
+    --object-x-max: 360;
+    --object-x-unit: calc(
+      var(--object-x-max) * var(--_ox) +
+      var(--object-x-min) * (1 - var(--_ox))
+    );
+  
+    --object-y-min: 0;
+    --object-y-max: 360;
+    --object-y-unit: calc(
+      var(--object-y-max) * var(--_oy) +
+      var(--object-y-min) * (1 - var(--_oy))
+    );
+  
+    --object-z-min: 0;
+    --object-z-max: 360;
+    --object-z-unit: calc(
+      var(--object-z-max) * var(--_oz) +
+      var(--object-z-min) * (1 - var(--_oz))
+    );
+  
+    --elevation-min: 0;
+    --elevation-max: 200;
+    --elevation-unit: calc(
+      var(--elevation-max) * var(--_el) +
+      var(--elevation-min) * (1 - var(--_el))
+    );
+  
+    timeline-scope: --_sx, --_sy, --_lx, --_ly, --_ox, --_oy, --_oz, --_el;
+    animation: linear both;
+    animation-name: --_sx, --_sy, --_lx, --_ly, --_ox, --_oy, --_oz, --_el;
+    animation-timeline: --_sx, --_sy, --_lx, --_ly, --_ox, --_oy, --_oz, --_el;
+    animation-range: entry 100% exit 0%;
+  
+    --scene-x: calc(var(--scene-x-unit) * 1deg);
+    --scene-y: calc(var(--scene-y-unit) * 1deg);
+    --scene-x-calc: calc(var(--scene-x) * -1);
+    --scene-y-calc: calc(var(--scene-y) * -1);
+  
+    --scene-normal-11: calc(cos(var(--scene-y-calc)));
+    --scene-normal-12: 0;
+    --scene-normal-13: calc(sin(var(--scene-y-calc)));
+    --scene-normal-21: calc(sin(var(--scene-x-calc)) * sin(var(--scene-y-calc)));
+    --scene-normal-22: calc(cos(var(--scene-x-calc)));
+    --scene-normal-23: calc(sin(var(--scene-x-calc)) * cos(var(--scene-y-calc)) * -1);
+    --scene-normal-31: calc(cos(var(--scene-x-calc)) * sin(var(--scene-y-calc)) * -1);
+    --scene-normal-32: calc(sin(var(--scene-x-calc)));
+    --scene-normal-33: calc(cos(var(--scene-x-calc)) * cos(var(--scene-y-calc)));
+  
+    --cube-size: 200px;
+    --cube-size-half: calc(var(--cube-size) * .5);
+    --cube-size-half-neg: calc(var(--cube-size-half) * -1);
+  
+    --light-x: calc(var(--light-x-unit) * 1deg);
+    --light-y: calc(var(--light-y-unit) * 1deg);
+    --light-x-calc: calc(var(--light-x) * -1);
+    --light-y-calc: calc(var(--light-y) * -1);
+  
+    --light-normal-a: calc(sin(var(--light-y-calc)) * cos(var(--light-x-calc)));
+    --light-normal-b: calc(sin(var(--light-x-calc)) * -1);
+    --light-normal-c: calc(cos(var(--light-y-calc)) * cos(var(--light-x-calc)));
+  
+    --light-adjusted-normal-a: calc(cos(var(--light-x-calc)) * sin(var(--light-y-calc) + var(--scene-y-calc)));
+    --light-adjusted-normal-b: calc((sin(var(--light-x-calc)) * cos(var(--scene-x-calc)) * -1) - (sin(var(--scene-x-calc)) * cos(var(--light-x-calc)) * cos(var(--light-y-calc) + var(--scene-y-calc))));
+    --light-adjusted-normal-c: calc((sin(var(--light-x-calc)) * sin(var(--scene-x-calc)) * -1) + (cos(var(--light-x-calc)) * cos(var(--scene-x-calc)) * cos(var(--light-y-calc) + var(--scene-y-calc))));
+  
+    --light-scene-normal-a: calc(var(--light-normal-a) * var(--scene-normal-11) + var(--light-normal-b) * var(--scene-normal-12) + var(--light-normal-c) * var(--scene-normal-13));
+    --light-scene-normal-b: calc(var(--light-normal-a) * var(--scene-normal-21) + var(--light-normal-b) * var(--scene-normal-22) + var(--light-normal-c) * var(--scene-normal-23));
+    --light-scene-normal-c: calc(var(--light-normal-a) * var(--scene-normal-31) + var(--light-normal-b) * var(--scene-normal-32) + var(--light-normal-c) * var(--scene-normal-33));
+  
+    --object-x: calc(var(--object-x-unit) * 1deg);
+    --object-y: calc(var(--object-y-unit) * 1deg);
+    --object-z: calc(var(--object-z-unit) * 1deg);
+    --object-x-calc: calc(var(--object-x) * -1);
+    --object-y-calc: calc(var(--object-y) * -1);
+    --object-z-calc: var(--object-z);
+  
+    /* x, y, z coodinates used in that order, would change depending on order of object rotations */
+    --object-normal-11: calc(cos(var(--object-y-calc)) * cos(var(--object-z-calc)));
+    --object-normal-12: calc(sin(var(--object-z-calc)) * cos(var(--object-y-calc)) * -1);
+    --object-normal-13: calc(sin(var(--object-y-calc)));
+    --object-normal-21: calc((sin(var(--object-z-calc)) * cos(var(--object-x-calc))) + (sin(var(--object-x-calc)) * sin(var(--object-y-calc))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * cos(var(--object-z-calc))));
+    --object-normal-22: calc((cos(var(--object-x-calc)) * cos(var(--object-z-calc))) - (sin(var(--object-x-calc)) * sin(var(--object-y-calc)) * sin(var(--object-z-calc))));
+    --object-normal-23: calc(sin(var(--object-x-calc)) * cos(var(--object-y-calc)) * -1);
+    --object-normal-31: calc((sin(var(--object-x-calc)) * sin(var(--object-z-calc))) - (sin(var(--object-y-calc)) * cos(var(--object-x-calc)) * cos(var(--object-z-calc))));
+    --object-normal-32: calc((sin(var(--object-x-calc)) * cos(var(--object-z-calc))) + (sin(var(--object-y-calc)) * sin(var(--object-z-calc)) * cos(var(--object-x-calc))));
+    --object-normal-33: calc(cos(var(--object-x-calc)) * cos(var(--object-y-calc)));
+  
+    --object-scene-normal-11: calc( var(--scene-normal-11) * var(--object-normal-11) + var(--scene-normal-12) * var(--object-normal-21) + var(--scene-normal-13) * var(--object-normal-31));
+    --object-scene-normal-12: calc( var(--scene-normal-11) * var(--object-normal-12) + var(--scene-normal-12) * var(--object-normal-22) + var(--scene-normal-13) * var(--object-normal-32));
+    --object-scene-normal-13: calc( var(--scene-normal-11) * var(--object-normal-13) + var(--scene-normal-12) * var(--object-normal-23) + var(--scene-normal-13) * var(--object-normal-33));
+    --object-scene-normal-21: calc( var(--scene-normal-21) * var(--object-normal-11) + var(--scene-normal-22) * var(--object-normal-21) + var(--scene-normal-23) * var(--object-normal-31));
+    --object-scene-normal-22: calc( var(--scene-normal-21) * var(--object-normal-12) + var(--scene-normal-22) * var(--object-normal-22) + var(--scene-normal-23) * var(--object-normal-32));
+    --object-scene-normal-23: calc( var(--scene-normal-21) * var(--object-normal-13) + var(--scene-normal-22) * var(--object-normal-23) + var(--scene-normal-23) * var(--object-normal-33));
+    --object-scene-normal-31: calc( var(--scene-normal-31) * var(--object-normal-11) + var(--scene-normal-32) * var(--object-normal-21) + var(--scene-normal-33) * var(--object-normal-31));
+    --object-scene-normal-32: calc( var(--scene-normal-31) * var(--object-normal-12) + var(--scene-normal-32) * var(--object-normal-22) + var(--scene-normal-33) * var(--object-normal-32));
+    --object-scene-normal-33: calc( var(--scene-normal-31) * var(--object-normal-13) + var(--scene-normal-32) * var(--object-normal-23) + var(--scene-normal-33) * var(--object-normal-33));
+  
+    --elevation-surface: calc(var(--cube-size-half) * -1);
+    --elevation-manual: calc(var(--elevation-unit) * 1px);
+    --elevation: calc(var(--elevation-surface) - var(--elevation-manual))
+  }
+  
+  @keyframes --_sx {0%{--_sx: 1}}
+  @keyframes --_sy {0%{--_sy: 1}}
+  @keyframes --_lx {0%{--_lx: 1}}
+  @keyframes --_ly {0%{--_ly: 1}}
+  @keyframes --_ox {0%{--_ox: 1}}
+  @keyframes --_oy {0%{--_oy: 1}}
+  @keyframes --_oz {0%{--_oz: 1}}
+  @keyframes --_el {0%{--_el: 1}}
+  
+  input[type="range"] {
+    overflow: hidden;
+  }
+  input[type="range"]::-webkit-slider-thumb{ 
+    view-timeline: var(--timeline) inline;
+  }
+  input[type="range"]::-moz-range-thumb {
+    view-timeline: var(--timeline) inline;
+  }
+  
+  #scene-x-value::before {
+    counter-reset: variable var(--scene-x-unit);
+    content: counter(variable) 'deg';
+  }
+  #scene-y-value::before {
+    counter-reset: variable var(--scene-y-unit);
+    content: counter(variable) 'deg';
+  }
+  #light-x-value::before {
+    counter-reset: variable var(--light-x-unit);
+    content: counter(variable) 'deg';
+  }
+  #light-y-value::before {
+    counter-reset: variable var(--light-y-unit);
+    content: counter(variable) 'deg';
+  }
+  #object-x-value::before {
+    counter-reset: variable var(--object-x-unit);
+    content: counter(variable) 'deg';
+  }
+  #object-y-value::before {
+    counter-reset: variable var(--object-y-unit);
+    content: counter(variable) 'deg';
+  }
+  #object-z-value::before {
+    counter-reset: variable var(--object-z-unit);
+    content: counter(variable) 'deg';
+  }
+  #elevation-value::before {
+    counter-reset: variable var(--elevation-unit);
+    content: counter(variable) 'px';
+  }
+  
+  figure {
+    margin: 0;
+  }
+  
+  
+  /* Controls */
+  
+  #controls {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-end;
+    font-size: .75rem;
+    border-top: 1px solid black;
+  }
+  
+  @media screen and (min-width: 640px) {
+    #controls {
+      border-top: 0;
+      border-left: 1px solid black;
+    }
+  }
+  
+  #controls label {
+    flex-basis: 100%;
+    font-weight: 700;
+    margin-top: .25rem;
+  }
+  
+  #controls span {
+    display: inline-block;
+    width: 7ch;
+    text-align: right;
+  }
+  
+  #controls input {
+    flex-grow: 1;
+  }
+  
+  
+  
+  /* Scene */
+  
+  #scene-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-items: stretch;
+    align-items: stretch;
+    overflow: hidden;
+    perspective: 1000px;
+  }
+  #scene {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(calc(var(--cube-size-half) * .5)) rotateX(var(--scene-x)) rotateY(var(--scene-y));
+  }
+  
+  #scene::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(to right, rgba(0,0,0,0.1) 0% 1px, rgba(0,0,0,0) 1px calc(100% - 1px), rgba(0,0,0,0.1) calc(100% - 1px) 100%), linear-gradient(to bottom, rgba(0,0,0,0.1) 0% 1px, rgba(0,0,0,0) 1px calc(100% - 1px), rgba(0,0,0,0.1) calc(100% - 1px) 100%);
+    background-size: 2rem 2rem;
+    background-repeat: repeat;
+    background-position: center center;
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: rotateX(90deg);
+  }
+  
+  #light {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: gold;
+    position: absolute;
+    transform: translateY(var(--elevation)) rotateY(var(--light-y)) rotateX(var(--light-x)) translateZ(var(--cube-size)) ;
+  }
+  
+  
+  
+  /* Object */
+  
+  .cube {
+    width: var(--cube-size);
+    aspect-ratio: 1;
+    transform-style: preserve-3d;
+    position: relative;
+    border-radius: 50%;
+  }
+  
+  .object-cube {
+    position: absolute;
+    top: calc(50% - (var(--cube-size) / 2));
+    left: calc(50% - (var(--cube-size) / 2));
+    transform: 
+      translateY(var(--elevation))
+      rotateY(calc(var(--scene-y) * -1)) 
+      rotateX(calc(var(--scene-x) * -1))
+      ;
+    /* background-color: #FB8DA0; */
+    border: 1px solid black;
+    overflow: hidden;
+  }
+  
+  .face {
+    --face-y-deg: 0deg;
+    --face-x-deg: 0deg;
+    --face-x-calc: calc(var(--face-x-deg) * -1);
+    --face-y-calc: calc(var(--face-y-deg) * -1);
+    --face-translate: 0;
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FB8DA0;
+    border: 1px solid #fb6b90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(calc(var(--scene-y) * -1)) rotateX(calc(var(--scene-x) * -1));
+    border-radius: 50%;
+    transform-style: preserve-3d;
+  
+    &::before {
+      content: '';
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+  }
+  
+  
+  
+  /* Shadow */
+  
+  #shadow {
+    position: absolute;
+    top: calc(50% - (var(--cube-size) / 2));
+    left: calc(50% - (var(--cube-size) / 2));
+    transform: rotateX(90deg) rotateZ(calc(var(--light-y) * -1));
+    filter: contrast(0);
+    opacity: 0.5;
+  }
+  
+  #shadow .cube {
+    transform: 
+      translateY(calc((var(--elevation) / sin(var(--light-x))) * cos(var(--light-x)) * 1))
+      scaleY(calc(1 / sin(var(--light-x))))   
+      rotateX(calc(var(--light-x) * -1)) 
+      rotateY(calc(var(--light-y) * -1))
+      ;
+  }
+  
+  #shadow .cube .face {
+    transform: rotateY(var(--light-y)) rotateX(var(--light-x));
+  }
+  
+  
+  
+  /* Lighting */
+  
+  .sphere-lighting {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    mix-blend-mode: hard-light;
+  }
+  
+  .lighting {
+    --lighting-translate: 0;
+    position: absolute;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    transform: 
+      rotateX(var(--scene-x))
+      rotateY(var(--scene-y)) 
+      rotateY(var(--light-y)) 
+      rotateX(var(--light-x))   
+      translateZ(var(--lighting-translate))             
+      ;
+  }
+  
+  .lighting-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgb(149,149,149) 0% 50%, rgb(107,107,107) 50% 100%);
+    border-radius: 50%;
+    transform: rotateZ(calc((atan2(var(--light-adjusted-normal-b), var(--light-adjusted-normal-a)))));
+  }
+  
+  .lighting-50 {
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(149,149,149);
+    transform-style: preserve-3d;
+  }
+  .lighting-50::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(107,107,107);
+    border-radius: 50%;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+  
+  .spotlight {
+    --lighting-translate: var(--cube-size-half);
+    top: calc(50% - .5rem);
+    left: calc(50% - .5rem);
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(170,170,170);
+  }
+  
+  
+  
+  /* Sphere Surface */
+  
+  .sphere-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: 
+      rotateX(var(--scene-x))
+      rotateY(var(--scene-y)) 
+      rotateX(var(--object-x))
+      rotateY(var(--object-y))
+      rotateZ(var(--object-z))
+      ;
+  }    
+  
+  .pokeball__button {
+    --face-translate: calc(var(--cube-size-half) * 1);  
+    --face-y-deg: 0deg;
+    --face-x-deg: 0deg;
+  
+    position: absolute;
+    top: calc(50% - var(--cube-size) * .15);
+    left: calc(50% - var(--cube-size) * .15);
+    width: calc(var(--cube-size) * .3);
+    height: calc(var(--cube-size) * .3);
+    background-color: black;
+    background: radial-gradient(circle, white 0% 35%, black 35% 40%, white 40% 50%, black 50% 100%);
+    border-radius: 50%;
+    transform: translateZ(var(--face-translate));
+    backface-visibility: hidden;
+  }
+  
+  .pokeball__red {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transform: rotateX(90deg) translateZ(calc(var(--cube-size) * .0375));
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  
+  .pokeball__red::before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: rotateX(180deg);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  
+  .pokeball__white {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: rotateX(90deg) translateZ(calc(var(--cube-size) * -.0375));;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  
+  .pokeball__white::before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: rotateX(180deg);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  
+  .pokeball_band {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(90deg);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+  }
+  
+  .pokeball__bg {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, red 0% calc(50% - var(--cube-size) * .0375), black calc(50% - var(--cube-size) * .0375) calc(50% + var(--cube-size) * .0375), white calc(50% + var(--cube-size) * .0375) 100%);
+    transform: 
+      rotateZ(calc(var(--object-z) * -1))
+      rotateY(calc(var(--object-y) * -1))
+      rotateX(calc(var(--object-x) * -1))
+      rotateY(calc(var(--scene-y) * -1)) 
+      rotateX(calc(var(--scene-x) * -1))
+      rotateZ(calc(atan2(var(--object-scene-normal-22), var(--object-scene-normal-12)) - 90deg))
+      translateZ(-100px)
+      ;
+    border-radius: 50%;
+  }          
+  
