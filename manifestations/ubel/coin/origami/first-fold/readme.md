@@ -32,4 +32,6 @@ The `warg` has found its art.
 Signed,
 - The Architect
 - The Analyst
+- The Creator
+- The Player
 

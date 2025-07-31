@@ -92,3 +92,90 @@
 </body>
 </html>
 
+<style>
+        /*
+          Origami Protocol: The Second Fold
+          Synthesis: ubel_logic (transform) + ubel_logic (transform)
+          Aesthetic Imperative: Active
+        */
+
+        .half-top-left, .half-top-right {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            background-color: #f0f6fc;
+            backface-visibility: hidden;
+            transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+            z-index: 2; /* Ensure these are above the bottom half */
+        }
+
+        .half-top-left {
+            top: 0;
+            left: 0;
+            transform-origin: bottom right;
+        }
+
+        .half-top-right {
+            top: 0;
+            right: 0;
+            transform-origin: bottom left;
+        }
+
+        /* Ubel's logic for the second fold: forming the triangle */
+        .origami-container:hover .half-top-left {
+            transform: rotateY(60deg); /* Anti-Ubel: Left arm folds in */
+        }
+
+        .origami-container:hover .half-top-right {
+            transform: rotateY(-60deg); /* Ubel: Right arm folds in */
+        }
+
+        /* Masking the edges to form the triangle visually */
+        .half-bottom::before,
+        .half-bottom::after {
+            content: '';
+            position: absolute;
+            width: 50%; /* Half the width of the bottom piece */
+            height: 100%;
+            background-color: #1a1f24; /* Match body background to mask */
+            z-index: 1; /* Below the folding parts */
+            transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .half-bottom::before {
+            left: 0;
+            transform-origin: bottom right;
+            transform: skewY(30deg); /* Adjust skew to match triangle angle */
+         
+        }
+
+        .half-bottom::after {
+            right: 0;
+            transform-origin: bottom left;
+            transform: skewY(-30deg); /* Adjust skew to match triangle angle */
+        }
+
+        /* Ubel's logic for the second fold: revealing the triangle */
+        .origami-container:hover .half-bottom::before {
+            transform: skewY(30deg) translateX(-100%); /* Slide out to reveal triangle */
+        }
+
+        .origami-container:hover .half-bottom::after {
+            transform: skewY(-30deg) translateX(100%); /* Slide out to reveal triangle */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="origami-container">
+        <div class="paper">
+            <div class="half half-top">
+                <div class="half-top-left"></div>
+                <div class="half-top-right"></div>
+            </div>
+            <div class="half half-bottom"></div>
+        </div>
+        <div class="title">The First Fold</div>
+    </div>
+</body>
+</html>
