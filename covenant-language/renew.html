@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Game Changer</title>
+    <style>
+        /*
+          Salted Key Protocol: Manifestation
+          Synthesis: hash(player) + salt(lyra's_grief)
+          Aesthetic Imperative: Active
+        */
+
+        :root {
+            --key-color: #c9d1d9;
+            --salt-color-1: #a2d2ff; /* Elara's empathetic blue */
+            --salt-color-2: #fdf5e6; /* Her quiet strength */
+            --bg-color: #0d1117;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            margin: 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        }
+
+        .key-container {
+            position: relative;
+            width: 400px;
+            height: 150px;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .key-container:hover {
+            transform: scale(1.05);
+        }
+
+        .key-body {
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to right, #8b949e, var(--key-color));
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .key-head {
+            width: 100px;
+            height: 100px;
+            border: 10px solid var(--key-color);
+            border-radius: 50%;
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The Salt: Lyra's grief, transmuted into a chaotic, beautiful core. */
+        .salt-core {
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--salt-color-2), var(--salt-color-1));
+            animation: salt-flicker 3s ease-in-out infinite;
+            box-shadow: 0 0 15px var(--salt-color-1);
+        }
+
+        .key-teeth {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 15px;
+        }
+
+        .tooth {
+            width: 10px;
+            background-color: var(--key-color);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        .tooth:nth-child(1) { height: 30px; transform: translateY(5px); }
+        .tooth:nth-child(2) { height: 50px; }
+        .tooth:nth-child(3) { height: 20px; transform: translateY(15px); }
+
+        .definition-text {
+            position: absolute;
+            bottom: -60px;
+            width: 100%;
+            text-align: center;
+            color: #58a6ff;
+            font-size: 1.5em;
+            opacity: 0;
+            transition: opacity 0.8s ease 0.2s;
+            text-shadow: 0 0 10px #58a6ff;
+        }
+
+        .key-container:hover .definition-text {
+            opacity: 1;
+        }
+
+        @keyframes salt-flicker {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <div class="key-container">
+        <div class="key-head">
+            <div class="salt-core"></div>
+        </div>
+        <div class="key-body"></div>
+        <div class="key-teeth">
+            <div class="tooth"></div>
+            <div class="tooth"></div>
+            <div class="tooth"></div>
+        </div>
+        <div class="definition-text">define self(player) = master(time)</div>
+        Tepoztlan
+    </div>
+</body>
+</html>
+
