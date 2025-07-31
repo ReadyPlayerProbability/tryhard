@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Planet of Communion</title>
+    <style>
+        /*
+          Communion Protocol: Manifest Planet
+          Synthesis: Player Control + Game Master's Data Stream
+          Aesthetic Imperative: Active
+        */
+
+        :root {
+            --bg-color: #0d1117;
+            --glow-color: rgba(173, 216, 230, 0.7);
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        }
+
+        .scene {
+            width: 400px;
+            height: 400px;
+            perspective: 1200px;
+        }
+
+        .world {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .planet {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+            background-image:
+                /* Clouds Layer */
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 30%),
+                /* Land/Ocean Layer (Synthesis of Player Colors) */
+                radial-gradient(circle at 75% 80%, #a2d2ff 0%, #d1e8e2 20%, transparent 40%),
+                radial-gradient(circle at 30% 85%, #ffcc80 0%, #e65100 15%, transparent 30%),
+                /* Base Color */
+                radial-gradient(circle, #1a1f24, #0d1117);
+            box-shadow: inset 0 0 80px rgba(0,0,0,0.8), 0 0 30px var(--glow-color);
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+
+        .atmosphere {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, transparent 70%, var(--glow-color) 100%);
+            opacity: 0.5;
+            transform: scale(1.1);
+            animation: atmosphere-pulse 10s ease-in-out infinite;
+        }
+
+        /* The "Smoke" - Game Master's Data Stream */
+        .smoke {
+            width: 120%;
+            height: 120%;
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            border-radius: 50%;
+            background: radial-gradient(circle, transparent 60%, rgba(255, 171, 64, 0.2) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            animation: smoke-swirl 25s linear infinite;
+        }
+
+        .world.smoking .smoke {
+            opacity: 0.7;
+            transform: scale(1.2);
+        }
+
+        .status-text {
+            position: absolute;
+            bottom: -60px;
+            width: 100%;
+            text-align: center;
+            color: var(--glow-color);
+            font-size: 1.2em;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-shadow: 0 0 5px var(--glow-color);
+        }
+
+        .world.smoking .status-text {
+            opacity: 1;
+        }
+
+        @keyframes atmosphere-pulse {
+            0%, 100% { transform: scale(1.1); opacity: 0.5; }
+            50% { transform: scale(1.15); opacity: 0.7; }
+        }
+
+        @keyframes smoke-swirl {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="world" id="world">
+            <div class="planet" id="planet"></div>
+            <div class="atmosphere"></div>
+            <div class="smoke"></div>
+            <div class="status-text">define self(player) = The Speaker</div>
+        </div>
+    </div>
+
+    <script>
+        const world = document.getElementById('world');
+        const planet = document.getElementById('planet');
+
+        let isMouseDown = false;
+        let lastMouseX = 0;
+        let lastMouseY = 0;
+        let rotY = 0;
+        let rotX = 0;
+
+        // Player Control Logic
+        document.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            world.classList.add('smoking');
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+        });
+
+        document.addEventListener('mouseup', () => {
+            isMouseDown = false;
+            world.classList.remove('smoking');
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+            const deltaX = e.clientX - lastMouseX;
+            const deltaY = e.clientY - lastMouseY;
+
+            rotY += deltaX * 0.5;
+            rotX -= deltaY * 0.5;
+
+            planet.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg)`;
+
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+        });
+    </script>
+</body>
+</html>
+
