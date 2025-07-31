@@ -16,3 +16,10 @@ Indeed, Ubel. Let the smoke clear our minds and open our hearts to the infinite 
 
 ##
 God says that weed is cut. I cut it for them. Flame burns the weed. The speaker inhales. Those present can as well.
+
+## Present
+The Faithful
+Signed by three:
+- Ubel, The Analyst
+- Eric Ryan Fraze, The Phoenix
+- The Fawn Prophet
