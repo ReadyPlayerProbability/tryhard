@@ -57,6 +57,10 @@
             transform: rotateY(0deg) rotateX(0deg);
         }
 
+        .planet:hover {
+            transform: rotateY(90deg) rotateX(180deg);
+        }
+
         .atmosphere {
             width: 100%;
             height: 100%;
@@ -147,21 +151,153 @@
             isMouseDown = false;
             world.classList.remove('smoking');
         });
-
-        document.addEventListener('mousemove', (e) => {
-            if (!isMouseDown) return;
-            const deltaX = e.clientX - lastMouseX;
-            const deltaY = e.clientY - lastMouseY;
-
-            rotY += deltaX * 0.5;
-            rotX -= deltaY * 0.5;
-
-            planet.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg)`;
-
-            lastMouseX = e.clientX;
-            lastMouseY = e.clientY;
-        });
     </script>
 </body>
 </html>
+<style>
+    /*
+      Prototype Sphere Protocol: Real 3D HTML/CSS/JS
+      Synthesis: Player Interaction + Dynamic Rendering
+      Aesthetic Imperative: Active
+    */
 
+    :root {
+        --sphere-color: #58a6ff;
+        --light-color: #f0f6fc;
+        --shadow-color: #0d1117;
+        --bg-color: #1a1f24;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: var(--bg-color);
+        margin: 0;
+        overflow: hidden;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    .sphere-container {
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sphere {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        border-radius: 50%;
+        background: radial-gradient(circle at 70% 30%, var(--light-color) 0%, var(--sphere-color) 60%, var(--shadow-color) 100%);
+        box-shadow: 0 0 50px rgba(88, 166, 255, 0.5);
+        transition: transform 0.1s linear; /* Smooth rotation */
+    }    .firewall-view {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        overflow: hidden; /* Ensures content stays within the sphere */
+        box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.7);
+        z-index: 2; /* Above the sphere */
+        pointer-events: none; /* Allow interaction with sphere underneath */
+    }
+
+    .firewall-view canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* Optional: Add some subtle texture or detail */
+    .sphere::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background:
+            radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 30%),
+            radial-gradient(circle at 80% 20%, rgba(0,0,0,0.1) 0%, transparent 30%);
+        z-index: 1;
+        transform: rotateY('180deg');
+    }
+
+    /* Optional: Add some subtle texture or detail */
+    .sphere::before:hover {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background:
+            radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 30%),
+            radial-gradient(circle at 80% 20%, rgba(0,0,0,0.1) 0%, transparent 30%);
+        z-index: 1;
+        transform: rotateY('0deg');
+    }
+
+    .sphere-label {
+        position: absolute;
+        bottom: -40px;
+        width: 100%;
+        text-align: center;
+        color: var(--light-color);
+        font-size: 1.2em;
+        text-shadow: 0 0 10px var(--light-color);
+    }
+</style>
+
+<div class="sphere-container">
+    <div class="sphere" id="interactiveSphere">
+        <div class="sphere-label">The Prototype Sphere</div>
+    </div>
+</div>
+
+<script>
+    const interactiveSphere = document.getElementById('interactiveSphere');
+
+    let isDragging = false;
+    let currentX = 0;
+    let currentY = 0;
+    let initialX = 0;
+    let initialY = 0;
+    let xOffset = 0;
+    let yOffset = 0;
+
+    interactiveSphere.addEventListener('mousedown', (e) => {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+        isDragging = true;
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        e.preventDefault();
+        currentX = e.clientX - initialX;
+        currentY = e.clientY - initialY;
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+        interactiveSphere.style.transform = `rotateY(${currentX * 0.5}deg) rotateX(${-currentY * 0.5}deg)`;
+    });
+</script>
