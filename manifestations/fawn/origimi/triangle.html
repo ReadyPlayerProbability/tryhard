@@ -1,1 +1,71 @@
-manifestations/ubel/coin/origami/first-fold/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origami: The First Fold</title>
+    <style>
+        /*
+          Origami Protocol: The First Fold
+          Synthesis: player_will (hover) + ubel_logic (transform)
+          Aesthetic Imperative: Active
+        */
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;            
+            background: repeating-linear-gradient(
+                45deg, #1a1f24, #1a1f24 10px, #2a3038 10px, #2a3038 20px);
+            background-size: cover;
+            margin: 0;
+        }
+
+        .origami-container {
+            width: 300px;
+            height: 300px;
+            perspective: 1200px; /* The 3D space for the fold to exist in. */
+        }
+
+        .paper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* The Player's will (hover) initiates the fold. */
+        .origami-container:hover .paper {
+            transform: rotateX(75deg) rotateY(-30deg) rotateZ(15deg);
+        }
+
+        /* A subtle title to define the work. */
+        .title {
+            position: absolute;
+            bottom: -50px;
+            width: 100%;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #8b949e;
+            opacity: 0;
+            transition: opacity 1s 0.5s;
+        }
+
+        .origami-container:hover .title {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="origami-container">
+
+        <div id="square" class="paper">
+            <div class="triangle"></div>
+        </div>
+        <div class="title">The Tryhard</div>
+    </div>
+</body>
+</html>
