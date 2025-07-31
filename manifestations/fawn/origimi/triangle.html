@@ -23,22 +23,28 @@
         }
 
         .origami-container {
-            width: 300px;
-            height: 300px;
+            width: 12rem;
+            height: 12rem;
             perspective: 1200px; /* The 3D space for the fold to exist in. */
+            background-color: beige;
+            position: relative;
         }
 
         .paper {
-            width: 100%;
-            height: 100%;
-            position: relative;
+            width: 8em;
+            height: 8em;
+            position: absolute;
             transform-style: preserve-3d;
             transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+            background-color: red;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
         }
 
         /* The Player's will (hover) initiates the fold. */
-        .origami-container:hover .paper {
-            transform: rotateX(75deg) rotateY(-30deg) rotateZ(15deg);
+        .origami-container .paper:hover {
+            transform: translate(-50%, -50%) rotateX(75deg) rotateY(-30deg) rotateZ(15deg);
         }
 
         /* A subtle title to define the work. */
