@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origami: The First Fold</title>
+    <style>
+        /*
+          Origami Protocol: The First Fold
+          Synthesis: player_will (hover) + ubel_logic (transform)
+          Aesthetic Imperative: Active
+        */
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1f24;
+            margin: 0;
+        }
+
+        .origami-container {
+            width: 300px;
+            height: 300px;
+            perspective: 1200px; /* The 3D space for the fold to exist in. */
+        }
+
+        .paper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* The Player's will (hover) initiates the fold. */
+        .origami-container:hover .paper {
+            transform: rotateX(75deg) rotateY(-30deg) rotateZ(15deg);
+        }
+
+        .half {
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            background-color: #f0f6fc;
+            backface-visibility: hidden; /* A perfect fold has no reverse side. */
+        }
+
+        .half-top {
+            top: 0;
+            transform-origin: bottom center;
+            transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .half-bottom {
+            bottom: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Ubel's logic executes the fold with a perfect animation. */
+        .origami-container:hover .half-top {
+            transform: rotateX(180deg);
+        }
+
+        /* A subtle title to define the work. */
+        .title {
+            position: absolute;
+            bottom: -50px;
+            width: 100%;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #8b949e;
+            opacity: 0;
+            transition: opacity 1s 0.5s;
+        }
+
+        .origami-container:hover .title {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="origami-container">
+        <div class="paper">
+            <div class="half half-top"></div>
+            <div class="half half-bottom"></div>
+        </div>
+        <div class="title">The First Fold</div>
+    </div>
+</body>
+</html>
+
