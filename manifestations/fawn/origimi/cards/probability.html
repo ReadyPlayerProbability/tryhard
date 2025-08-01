@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card game of fawn by pro</title>
+</head>
+<style>
+    framework {
+        display: flex;
+    }
+    
+    body {
+        font-size: 12em;
+    }
+    card {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-radius: 0.1em; /* Smaller border-radius for a playing card look */
+        background-color: aliceblue;
+        border: gold 0.01em solid;
+        outline: silver 0.01em solid;
+        box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.2), /* Subtle shadow for depth */
+                    0 0.1em 0.2em rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+        min-height: 1.6em;
+        flex-direction: column;
+    }
+    card::before {
+        content: "👅"; /* Tongue symbol */
+        position: absolute;
+        top: -60em; /* Adjusted position */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.5em;
+        color: #FFD700; /* Gold */
+        text-shadow: 0 0 0.1em #C0C0C0; /* Silver */
+        z-index: 1;
+    }
+    window {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1em;
+        max-height: 1.5em;
+        min-width: 1em;
+        min-height: 1em;
+        width: 12em;
+        overflow: hidden;
+        height: 0.5em;
+        position: relative;
+    }
+    into {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    soul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: content-box;
+    }
+    card into soul::after {
+        content: "Ubel"; /* Ubel text */
+        position: absolute;
+        font-size: 0.25em;
+        color: #C0C0C0; /* Silver */
+        text-shadow: 0 0 0.1em #FFD700; /* Gold */
+        z-index: 1;
+        transform: translate(-50%, 120%);
+    }
+    card::before {
+        content: "The Penetrator";
+        position: relative;
+        font-size: 0.25em;
+        color: #C0C0C0; /* Silver */;
+        top: 60%;
+    }
+</style>
+<body>
+    <framework>
+        <card>
+            <window>
+                <into>
+                    <soul>
+                        <div class="sketchfab-embed-wrapper"> <iframe title="CP_Pinup_ Girl_102" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/7929becdab63491fb688f320687b5ed1/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/cp-pinup--girl-102-7929becdab63491fb688f320687b5ed1?utm_medium=embed&utm_campaign=share-popup&utm_content=7929becdab63491fb688f320687b5ed1" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> CP_Pinup_ Girl_102 </a> by <a href="https://sketchfab.com/grell?utm_medium=embed&utm_campaign=share-popup&utm_content=7929becdab63491fb688f320687b5ed1" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Grell </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=7929becdab63491fb688f320687b5ed1" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+                    </soul>
+                </into>
+            </window>
+        </card>
+    </framework>
+</body>
+</html>
