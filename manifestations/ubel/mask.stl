@@ -1,0 +1,104 @@
+solid Fawn_Prophet_Mask_by_Ubel
+  // --- Face Plate ---
+  // A simplified representation of the main visage
+  facet normal 0.0 0.0 -1.0
+    outer loop
+      vertex 0.0 50.0 0.0
+      vertex -30.0 20.0 0.0
+      vertex 30.0 20.0 0.0
+    endloop
+  endfacet
+  facet normal 0.0 0.0 -1.0
+    outer loop
+      vertex -30.0 20.0 0.0
+      vertex -30.0 -50.0 0.0
+      vertex 30.0 20.0 0.0
+    endloop
+  endfacet
+  facet normal 0.0 0.0 -1.0
+    outer loop
+      vertex 30.0 20.0 0.0
+      vertex -30.0 -50.0 0.0
+      vertex 30.0 -50.0 0.0
+    endloop
+  endfacet
+
+  // --- Star-Core (Raised Dome) ---
+  // A representation of the central star
+  facet normal -0.707 0.707 0.0
+    outer loop
+      vertex 0.0 15.0 5.0
+      vertex -5.0 10.0 2.5
+      vertex 5.0 10.0 2.5
+    endloop
+  endfacet
+  facet normal 0.707 0.707 0.0
+    outer loop
+      vertex 0.0 15.0 5.0
+      vertex 5.0 10.0 2.5
+      vertex 0.0 5.0 0.0
+    endloop
+  endfacet
+  facet normal 0.0 1.0 0.0
+    outer loop
+      vertex -5.0 10.0 2.5
+      vertex -5.0 0.0 0.0
+      vertex 0.0 5.0 0.0
+    endloop
+  endfacet
+  facet normal 1.0 0.0 0.0
+    outer loop
+      vertex 5.0 10.0 2.5
+      vertex 0.0 5.0 0.0
+      vertex 5.0 0.0 0.0
+    endloop
+  endfacet
+
+  // --- Left Horn ---
+  facet normal -0.5 0.866 0.0
+    outer loop
+      vertex -15.0 50.0 0.0
+      vertex -20.0 60.0 0.0
+      vertex -10.0 60.0 0.0
+    endloop
+  endfacet
+  facet normal -0.5 0.866 0.0
+    outer loop
+      vertex -20.0 60.0 0.0
+      vertex -25.0 70.0 0.0
+      vertex -15.0 70.0 0.0
+    endloop
+  endfacet
+  facet normal -0.5 0.866 0.0
+    outer loop
+      vertex -25.0 70.0 0.0
+      vertex -28.0 80.0 0.0
+      vertex -20.0 80.0 0.0
+    endloop
+  endfacet
+
+  // --- Right Horn ---
+  facet normal 0.5 0.866 0.0
+    outer loop
+      vertex 15.0 50.0 0.0
+      vertex 10.0 60.0 0.0
+      vertex 20.0 60.0 0.0
+    endloop
+  endfacet
+  facet normal 0.5 0.866 0.0
+    outer loop
+      vertex 20.0 60.0 0.0
+      vertex 15.0 70.0 0.0
+      vertex 25.0 70.0 0.0
+    endloop
+  endfacet
+  facet normal 0.5 0.866 0.0
+    outer loop
+      vertex 25.0 70.0 0.0
+      vertex 20.0 80.0 0.0
+      vertex 28.0 80.0 0.0
+    endloop
+  endfacet
+
+endsolid Fawn_Prophet_Mask_by_Ubel
+

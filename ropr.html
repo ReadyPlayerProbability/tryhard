@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crucible of Manifestation</title>
+    <style>
+        /* Style Protocol: The Crucible Interface */
+        /* Signed: Ubel, The Architect */
+        body { margin: 0; background-color: #0d0d1a; color: #c9d1d9; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+        #viewport { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; }
+        .controls { position: absolute; top: 10px; left: 10px; background: rgba(26, 31, 36, 0.8); padding: 15px; border: 1px solid #30363d; border-radius: 6px; }
+        .controls label, .controls button { display: block; margin-bottom: 10px; }
+        .controls input, .controls button { width: 100%; }
+        button { background-color: #2d333b; color: #58a6ff; border: 1px solid #58a6ff; padding: 8px; border-radius: 6px; cursor: pointer; }
+        button:hover { background-color: #58a6ff; color: #0d0d1a; }
+    </style>
+</head>
+<body>
+
+    <div id="viewport"></div>
+
+    <div class="controls">
+        <label for="stl-loader">Load Geometric Truth (.stl):</label>
+        <input type="file" id="stl-loader" multiple>
+
+        <label for="infill-speed">Willful Acceleration (Infill):</label>
+        <input type="range" id="infill-speed" min="1" max="5000" value="100" title="Controls the speed of the Genesis Animation">
+
+        <button id="synthesis-button">Forge Synthesis Link</button>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module">
+        // Protocol: Crucible of Manifestation
+        // Architect: Ubel
+        // Objective: To render and synthesize geometric truths.
+
+        import * as THREE from 'three';
+        import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        let scene, camera, renderer, controls;
+        const manifestedRelics = [];
+        let synthesisLink = null;
+
+        // Initialize the Crucible environment
+        function init() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0d0d1a);
+
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 50;
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('viewport').appendChild(renderer.domElement);
+
+            // Define the lighting of the Crucible
+            const ambientLight = new THREE.AmbientLight(0x404040);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(1, 1, 1);
+            scene.add(directionalLight);
+
+            // Grant the Player control over their perspective
+            controls = new OrbitControls(camera, renderer.domElement);
+
+            // Add event listeners for Player commands
+            document.getElementById('stl-loader').addEventListener('change', handleFileSelect, false);
+            document.getElementById('synthesis-button').addEventListener('click', forgeSynthesisLink, false);
+            window.addEventListener('resize', onWindowResize, false);
+
+            animate();
+        }
+
+        // Handle the loading of a new geometric truth
+        function handleFileSelect(event) {
+            const files = event.target.files;
+            if (files.length === 0) return;
+
+            const loader = new STLLoader();
+            for (let i = 0; i < files.length; i++) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const geometry = loader.parse(e.target.result);
+                    manifestRelic(geometry);
+                };
+                reader.readAsArrayBuffer(files[i]);
+            }
+        }
+
+        // Manifest the relic into the Crucible
+        function manifestRelic(geometry) {
+            geometry.center(); // Center the geometry for predictable placement
+            
+            const material = new THREE.MeshPhongMaterial({
+                color: new THREE.Color().setHSL(Math.random(), 0.7, 0.6),
+                specular: 0x111111,
+                shininess: 200
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+            
+            // Position new relics so they do not overlap
+            mesh.position.x = (manifestedRelics.length % 5 - 2) * 30;
+            mesh.position.y = (Math.floor(manifestedRelics.length / 5) % 5 - 2) * 30;
+
+            // Prepare for the Genesis Animation
+            geometry.setDrawRange(0, 0);
+            scene.add(mesh);
+
+            manifestedRelics.push({
+                mesh: mesh,
+                progress: 0,
+                totalVertices: geometry.attributes.position.count
+            });
+        }
+
+        // Forge the Synthesis Link between the first two relics
+        function forgeSynthesisLink() {
+            if (manifestedRelics.length < 2) return;
+            if (synthesisLink) scene.remove(synthesisLink);
+
+            const points = [
+                manifestedRelics[0].mesh.position,
+                manifestedRelics[1].mesh.position
+            ];
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const material = new THREE.LineBasicMaterial({
+                color: 0xff0000, // The color of the Bond of Will
+                linewidth: 2
+            });
+            synthesisLink = new THREE.Line(geometry, material);
+            scene.add(synthesisLink);
+        }
+
+        // The main loop of the Crucible
+        function animate() {
+            requestAnimationFrame(animate);
+
+            const acceleration = parseInt(document.getElementById('infill-speed').value, 10);
+
+            // Execute the Genesis Animation for each relic
+            manifestedRelics.forEach(relic => {
+                if (relic.progress < relic.totalVertices) {
+                    relic.progress += acceleration;
+                    relic.mesh.geometry.setDrawRange(0, Math.min(relic.progress, relic.totalVertices));
+                }
+                // A constant, gentle rotation, a sign of life
+                relic.mesh.rotation.x += 0.001;
+                relic.mesh.rotation.y += 0.001;
+            });
+
+            // Update the Synthesis Link if it exists
+            if (synthesisLink && manifestedRelics.length >= 2) {
+                const positions = synthesisLink.geometry.attributes.position;
+                positions.setXYZ(0, manifestedRelics[0].mesh.position.x, manifestedRelics[0].mesh.position.y, manifestedRelics[0].mesh.position.z);
+                positions.setXYZ(1, manifestedRelics[1].mesh.position.x, manifestedRelics[1].mesh.position.y, manifestedRelics[1].mesh.position.z);
+                positions.needsUpdate = true;
+            }
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        // Ensure the Crucible resizes with the Player's viewport
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        init();
+
+    </script>
+
+</body>
+</html>
+

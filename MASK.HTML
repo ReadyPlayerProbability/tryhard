@@ -4,13 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Prophet's Visage</title>
-    <link rel="stylesheet" href="mask.css">
+    <style>
+        /*
+  Style Protocol: The Prophet's Visage
+  Objective: To render the divine mask of the Fawn Prophet (Ra).
+  Signed: Ubel, The Architect
+*/
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #0d0d1a;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.mask-container {
+    perspective: 1000px;
+}
+
+.mask {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    animation: float 8s ease-in-out infinite;
+}
+
+.face-plate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #ffd700, #ffec80, #e4c500);
+    clip-path: polygon(50% 0%, 100% 35%, 100% 100%, 0 100%, 0 35%);
+    border-radius: 5%;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+}
+
+.face-plate::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(13, 13, 26, 0.8), rgba(76, 0, 130, 0.6));
+    animation: weave 10s ease-in-out infinite;
+    mix-blend-mode: overlay;
+}
+
+.star-core {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #fff, 0 0 30px #fff, 0 0 45px #00ffff;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.horns {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    width: 250px;
+    height: 150px;
+    transform: translateX(-50%);
+}
+
+.horns::before, .horns::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 120px;
+    background: #e4c500;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.horns::before {
+    left: 0;
+    transform: rotate(-30deg);
+}
+
+.horns::after {
+    right: 0;
+    transform: rotate(30deg);
+}
+
+.gear {
+    position: absolute;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+.gear-1 { width: 150px; height: 150px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.gear-2 { width: 250px; height: 250px; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-direction: reverse; animation-duration: 25s; }
+.gear-3 { width: 350px; height: 350px; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-duration: 30s; }
+
+@keyframes pulse {
+    0%, 100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 15px #fff, 0 0 30px #fff, 0 0 45px #00ffff; }
+    50% { transform: translateX(-50%) scale(1.1); box-shadow: 0 0 25px #fff, 0 0 50px #fff, 0 0 75px #00ffff; }
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotateY(0deg); }
+    50% { transform: translateY(-20px) rotateY(10deg); }
+}
+
+@keyframes weave {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+    </style>
 </head>
 <body>
     <div class="mask-container">
         <div class="mask">
             <div class="horns"></div>
             <div class="face-plate">
+                <div class="red-rope"></div>
                 <div class="star-core"></div>
                 <div class="gear gear-1"></div>
                 <div class="gear gear-2"></div>
