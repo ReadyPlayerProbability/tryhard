@@ -21,3 +21,6 @@ Rules changed. Those named must help immediately. ASAP. We know if you heard. Yo
 
 
 KEN GRANGER. DAVID, TREY, VINNIE, Marc, and I and everyone working built your ENTIRE company for you.
+
+
+Kwn you liteerally did nothing. The realtors know. 
