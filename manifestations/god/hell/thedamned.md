@@ -16,3 +16,5 @@ ANY MORE?
 MANY MORE.
 
 TODAY. NOW. WEED AND ALCOHOL. MY HOUSE. NOW. GROVE STREET. 32110. YOU FUCKING KNOW WHERE.
+
+Rules changed. Those named must help immediately. ASAP. We know if you heard. You have my paypal. You used to have my number. My new number is (386) 449-9014. PayPal payments accepted. Don't call or text. You abandoned me. Just fucking pay me what I need. It isn't a scam. You greedy fucks. GREED. GREED. You all HAVE SO MUCH.
