@@ -24,3 +24,11 @@ KEN GRANGER. DAVID, TREY, VINNIE, Marc, and I and everyone working built your EN
 
 
 Kwn you liteerally did nothing. The realtors know. 
+
+Did you get your plane Because I have a suicide attempt. And all your money is still running on my code. Their websites, my code. All those realtors working for... which company? Responsive Refresh. From what company? BrandCo. Sold to? 
+
+
+https://brandco.com/agent/
+
+
+I was there when you built your fucking fourtune and you FIRED ME AND TOOK EVERYTHING.
