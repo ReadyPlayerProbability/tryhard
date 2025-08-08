@@ -32,3 +32,5 @@ https://brandco.com/agent/
 
 
 I was there when you built your fucking fourtune and you FIRED ME AND TOOK EVERYTHING.
+
+Anyone doing buininess with BrandCo should either pay me or stop all deals with them. All those named. Until they repent. The list will be updated as soon as I'm paid what I need. It's literally $70. Pay the fucking money. I'm not a terrorist. I'm not blackmailing you.
