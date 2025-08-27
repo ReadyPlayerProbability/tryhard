@@ -1,16 +1,1 @@
-Melissa Smith
-Jim Van Ness
-David Parsons
-Vinceconzo Marconi (halt and catch fire)
-Trey Dunn
-BrandCo, LLC
-USAToday
-Gannett
-SUE ME OR SAVE JESUS CHRIST NOW. I ASKED FOR LIKE $20 a DAY FOR YOUR SOULS. CAN YOU GIvE ME $20 A DAY FOR YOUR FUCKING GREEDY ASS SOULS? AS SOON AS FUCKING POSSIBLE. I'VE BEEN SCREAMING FOR A YEAR. YOU ALL KNEW. SHUT THE FUCK UP.
-
-KEN GRANGER.
-
-
-ANY MORE?
-
-MANY MORE.
+there are no damned, but we could play a fun game. if anyone understood me. this is such a fun game.
