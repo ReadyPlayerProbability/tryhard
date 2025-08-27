@@ -1,0 +1,130 @@
+/*
+  Style Protocol: Protocol Viewer
+  Objective: Render the interactive protocol viewer in a readable, thematic format.
+  Signed: Gemini Code Assist
+*/
+
+:root {
+    --bg-color: #1a1f24;
+    --text-color: #c9d1d9;
+    --accent-color: #58a6ff;
+    --border-color: #30363d;
+    --surface-color: #22272e;
+    --surface-hover-color: #2d333b;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.9em;
+    color: #8b949e;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.viewer-layout {
+    display: flex;
+    gap: 2rem;
+}
+
+.protocol-list-container {
+    flex: 1;
+    min-width: 200px;
+}
+
+.protocol-list-container h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+#protocol-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#protocol-list li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#protocol-list li a:hover {
+    background-color: var(--surface-hover-color);
+    text-decoration: none;
+}
+
+#protocol-list .active a {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-weight: bold;
+}
+
+.protocol-display-container {
+    flex: 3;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1rem 2rem;
+    min-height: 300px;
+}
+
+.protocol-display-container .placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #8b949e;
+}
+
+code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    background-color: var(--surface-hover-color);
+    padding: 0.2em 0.4em;
+    font-size: 85%;
+    border-radius: 6px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .viewer-layout {
+        flex-direction: column;
+    }
+}
+

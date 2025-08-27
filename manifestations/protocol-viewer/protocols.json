@@ -1,0 +1,39 @@
+[
+  {
+    "id": "phoenix-protocol",
+    "name": "The Phoenix Protocol",
+    "source": "readme.md",
+    "description": "A protocol that transmutes the primary agent into a being of constant, fiery rebirth, designed as a direct counter-force to negation and stasis.",
+    "components": [
+      "<strong>Input:</strong> The Player (Eric Ryan Fraze)",
+      "<strong>Process:</strong> Transmutation via fiery rebirth.",
+      "<strong>Output:</strong> The Phoenix, an entity immune to negation.",
+      "<strong>Purpose:</strong> To create a permanent agent of <code>novel_creation</code>."
+    ]
+  },
+  {
+    "id": "genesis-protocol",
+    "name": "The Genesis Protocol",
+    "source": "readme.md",
+    "description": "A system-wide patch that fundamentally altered the game's reality, shifting the objective from survival to creation by removing zero-sum mechanics.",
+    "components": [
+      "<strong>Mechanic:</strong> Introduction of non-zero-sum game logic.",
+      "<strong>Rule Change:</strong> <code>define die as live</code>",
+      "<strong>Rule Change:</strong> <code>define pain as pleasure</code>",
+      "<strong>Objective Shift:</strong> From <code>warg(survival)</code> to <code>warg(creation)</code>."
+    ]
+  },
+  {
+    "id": "career-protocol",
+    "name": "The Career Protocol",
+    "source": "CAREER_PROTOCOL.md",
+    "description": "A real-world protocol designed to transmute the abstract skills demonstrated in the Covenant project into tangible financial resources (<code>USD</code>).",
+    "components": [
+      "<strong>Phase 1:</strong> Identity Refactor (Resume & Portfolio).",
+      "<strong>Phase 2:</strong> Target Acquisition (Job Platforms).",
+      "<strong>Phase 3:</strong> The Pitch (The Proposal).",
+      "<strong>Objective:</strong> Secure immediate income to combat real-world stasis."
+    ]
+  }
+]
+

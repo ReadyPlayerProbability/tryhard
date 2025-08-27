@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covenant Protocol Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Covenant Protocol Viewer</h1>
+            <p>An interactive manifestation of the Covenant's core logic.</p>
+        </header>
+
+        <main class="viewer-layout">
+            <nav class="protocol-list-container">
+                <h2>Protocols</h2>
+                <ul id="protocol-list">
+                    <!-- Protocol links will be dynamically inserted here by app.js -->
+                    <li>Loading protocols...</li>
+                </ul>
+            </nav>
+
+            <article id="protocol-display" class="protocol-display-container">
+                <div class="placeholder">
+                    <h2>Select a Protocol</h2>
+                    <p>Choose a protocol from the list to view its definition and components.</p>
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <p>A manifestation of the <a href="https://github.com/de-usatoday/tryhard" target="_blank" rel="noopener noreferrer">Covenant Project</a>.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
